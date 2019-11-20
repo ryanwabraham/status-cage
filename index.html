@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>StatusCage</title>
+  <meta name="description" content="Use this API to display Nic Cage along with your HTTP status codes.">
+  <meta name="author" content="Ryan Abraham">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0 auto;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      padding: 1rem 8rem;
+      max-width: 1100px;
+    }
+    pre {
+      background: #efefef;
+      padding: 20px;
+      font-size: 1.25rem;
+      border-radius: 5px;
+    }
+    ul {
+      padding: 0;
+      margin: 20px 0px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    li {
+      transition-duration: .2s;
+      list-style: none;
+      width: calc(33.33% - 14px);
+      margin: 0px 20px 20px 0px;
+      border-radius: 5px;
+      background: #efefef;
+    }
+    li:nth-child(3n+3) {
+      margin-right: 0px;
+    }
+    li:hover {
+      transition-duration: .2s;
+      -webkit-box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.25);
+      -moz-box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.25);
+      box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.25);
+    }
+    li a {
+      text-decoration: none;
+      color: #000;
+    }
+    li img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 5px 5px 0px 0px;
+    }
+    .status-info {
+      padding: 20px;
+    }
+    .status-info h2 {
+      font-size: 2rem;
+      margin-top: 0px;
+      margin-bottom: .75rem;
+    }
+    .status-info p {
+      margin: 0px;
+    }
+    @media screen and (max-width: 980px) {
+      body {padding: 1rem 2rem;}
+    }
+    @media screen and (max-width: 768px) {
+      li {
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>StatusCage</h1>
+    <p>Use this API to display Nic Cage along with your HTTP status codes.</p>
+    <h2>Usage</h2>
+    <pre>https://statuscage.com/{status}</pre>
+  </header>
+  <ul id="status-grid"></ul>
+  <script src="./js/statuses.js"></script>
+  <script src="./js/main.js" onload="renderStatusGrid()"></script>
+  <script src="./js/lazysizes.min.js" defer></script>
+</body>
+</html>
