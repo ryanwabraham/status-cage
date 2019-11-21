@@ -1,3 +1,14 @@
+function main() {
+  renderStatusGrid();
+  printCopyrightDate();
+}
+
+function printCopyrightDate() {
+  const year = new Date().getFullYear();
+  const copyright = document.getElementById("copyright-date");
+  copyright.innerHTML = year;
+}
+
 function renderStatus(code) {
   return `
   <li>
